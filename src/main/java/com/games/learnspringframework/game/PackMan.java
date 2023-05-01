@@ -1,5 +1,10 @@
 package com.games.learnspringframework.game;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
 public class PackMan implements GamingConsole{
   public void up(){
     System.out.println("up");

@@ -1,10 +1,14 @@
 package com.games.learnspringframework.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
   
   GamingConsole gamingConsole;
 
-  public GameRunner(GamingConsole marioGame){
+  public GameRunner(@Qualifier("MarioQualifier")GamingConsole marioGame){
     this.gamingConsole = marioGame;
   }
 

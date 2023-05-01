@@ -1,5 +1,6 @@
 package com.games.learnspringframework.game;
 
+
 public interface GamingConsole {
   public void down();
   public void up();

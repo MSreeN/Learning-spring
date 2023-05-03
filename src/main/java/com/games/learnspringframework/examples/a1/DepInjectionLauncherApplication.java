@@ -14,6 +14,7 @@ import com.games.learnspringframework.game.GameRunner;
 class YourBusinessClass{
   @Autowired
   Dependency1 dependency1;
+  @Autowired
   Dependency2 dependency2;
 
   @Bean

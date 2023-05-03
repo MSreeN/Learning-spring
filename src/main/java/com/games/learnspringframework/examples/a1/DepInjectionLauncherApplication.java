@@ -15,8 +15,12 @@ class YourBusinessClass{
   Dependency1 dependency1;
 
   //field dependency injection
-  @Autowired
   Dependency2 dependency2;
+
+  public YourBusinessClass(Dependency2 dependency2){
+    System.out.println("this is form constructor");
+    this.dependency2 = dependency2;
+  }
 
   // @Bean
   // public void sample(){

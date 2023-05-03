@@ -12,14 +12,23 @@ import com.games.learnspringframework.game.GameRunner;
 
 @Component
 class YourBusinessClass{
-  @Autowired
   Dependency1 dependency1;
+
+  //field dependency injection
   @Autowired
   Dependency2 dependency2;
 
-  @Bean
-  public void sample(){
-    System.out.println("this is bean from the your business class ");
+  // @Bean
+  // public void sample(){
+  //   System.out.println("this is bean from the your business class ");
+  // }
+
+
+  //Getter and Setter dependency injection
+  @Autowired
+  public Dependency1 dependency1Setter(Dependency1 dependency1) {
+    System.out.println("this is dependency 1 setter method");
+    return this.dependency1 = dependency1;
   }
 
   public String toString(){

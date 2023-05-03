@@ -1,5 +1,6 @@
 package com.games.learnspringframework.examples.a1;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +12,18 @@ import com.games.learnspringframework.game.GameRunner;
 
 @Component
 class YourBusinessClass{
+  @Autowired
+  Dependency1 dependency1;
+  Dependency2 dependency2;
 
+  @Bean
+  public void sample(){
+    System.out.println("this is bean from the your business class ");
+  }
+
+  public String toString(){
+    return "Using " + dependency1 + " and " + dependency2;
+  }
 }
 
 @Component
@@ -37,6 +49,8 @@ public class DepInjectionLauncherApplication {
     for(String beanName: annotation.getBeanDefinitionNames()){
       System.out.println(beanName);
     }
+
+    System.out.println(annotation.getBean(YourBusinessClass.class));
     
   }
   }

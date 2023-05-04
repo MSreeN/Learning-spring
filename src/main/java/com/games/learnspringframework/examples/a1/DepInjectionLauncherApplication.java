@@ -17,9 +17,15 @@ class YourBusinessClass{
   //field dependency injection
   Dependency2 dependency2;
 
-  public YourBusinessClass(Dependency2 dependency2){
-    System.out.println("this is form constructor");
+  // public YourBusinessClass(Dependency2 dependency2){
+  //   System.out.println("this is form constructor");
+  //   this.dependency2 = dependency2;
+  // }
+    @Bean
+  public Dependency2 autoWiring(Dependency2 dependency2){
+    System.out.println("this is form autowiring method");
     this.dependency2 = dependency2;
+    return this.dependency2;
   }
 
   // @Bean
@@ -63,8 +69,8 @@ public class DepInjectionLauncherApplication {
     for(String beanName: annotation.getBeanDefinitionNames()){
       System.out.println(beanName);
     }
-
     System.out.println(annotation.getBean(YourBusinessClass.class));
+    // System.out.println(annotation.getBean("autoWiring"));
     
   }
   }

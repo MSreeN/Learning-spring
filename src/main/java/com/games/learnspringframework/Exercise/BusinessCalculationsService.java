@@ -2,13 +2,16 @@ package com.games.learnspringframework.Exercise;
 
 import java.util.Arrays;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class BusinessCalculationsService {
-  @Autowired
   private DataService dataService;
+
+  BusinessCalculationsService(DataService dataService){
+    this.dataService  = dataService;
+  }
 
   public int findMax(){
     return Arrays.stream(dataService.retrieveData()).max().orElse(0);

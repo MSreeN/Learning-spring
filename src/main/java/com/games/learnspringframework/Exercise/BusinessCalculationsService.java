@@ -1,9 +1,15 @@
 package com.games.learnspringframework.Exercise;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BusinessCalculationsService {
-  
-  @Autowired
-  MongoDbDataService mongoDbDataService;
+  private DataService dataService;
+
+  public int findMax(){
+    return Arrays.stream(dataService.retrieveData()).max().orElse(0);
+  }
 }

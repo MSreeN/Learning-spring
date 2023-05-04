@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class ExerciseMain {
   public static void main(String[] args) {
     try(var applicationContext = new AnnotationConfigApplicationContext(ExerciseMain.class)){
-      System.out.println(applicationContext.getBean(BusinessCalculationsService.class).findMax());
+      System.out.println("output " + applicationContext.getBean(BusinessCalculationsService.class).findMax());
     }
   }
 }

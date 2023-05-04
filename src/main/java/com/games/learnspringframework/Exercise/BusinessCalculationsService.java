@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BusinessCalculationsService {
+  @Autowired
   private DataService dataService;
 
   public int findMax(){

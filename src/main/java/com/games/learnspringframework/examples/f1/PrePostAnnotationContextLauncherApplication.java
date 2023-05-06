@@ -2,11 +2,13 @@ package com.games.learnspringframework.examples.f1;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
-// @Lazy
+@Lazy
 @Component
 class SomeClass{
   private SomeDependency someDependency;
@@ -19,6 +21,11 @@ class SomeClass{
   @PostConstruct
   public void initialize(){
     someDependency.getSample();
+  }
+
+  @PreDestroy
+  public void cleanUP(){
+    System.out.println("------CleanUP method from the SomeDependency----");
   }
 }
 

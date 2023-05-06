@@ -23,6 +23,8 @@ class SomeClass{
     someDependency.getSample();
   }
 
+  //PreDestroy is used on a method and called before the instance or bean is in the process of being removed by the container.
+  //This method can be typically use to release resources that it has bee holding
   @PreDestroy
   public void cleanUP(){
     System.out.println("------CleanUP method from the SomeDependency----");

@@ -14,7 +14,8 @@ class SomeClass{
     System.out.println("From the SomeClass constructor");
     this.someDependency = someDependency;
   }
-  ///PostConstruct will call the method right after bean is initialized, means as soon as the dependencies are autowired spring would call the method which is annotated with the @PostConstruct
+  ///PostConstruct will call the method right after bean is initialized, means as soon as the dependencies are autowired spring would call the method which is annotated with the @PostConstruct.
+  //This method will be invoked before any other bean make use of this bean
   @PostConstruct
   public void initialize(){
     someDependency.getSample();

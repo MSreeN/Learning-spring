@@ -2,7 +2,6 @@ package com.games.learnspringframework.examples.f1;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
@@ -15,7 +14,7 @@ class SomeClass{
     System.out.println("From the SomeClass constructor");
     this.someDependency = someDependency;
   }
-
+  ///PostConstruct will call the method right after bean is initialized, means as soon as the dependencies are autowired spring would call the method which is annotated with the @PostConstruct
   @PostConstruct
   public void initialize(){
     someDependency.getSample();

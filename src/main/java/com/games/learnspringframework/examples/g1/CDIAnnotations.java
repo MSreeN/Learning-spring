@@ -2,6 +2,8 @@ package com.games.learnspringframework.examples.g1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -20,6 +22,7 @@ class Needed{
 }
 
 
+@ComponentScan
 public class CDIAnnotations {
   public static void main(String[] args) {
     try(var context = new AnnotationConfigApplicationContext(CDIAnnotations.class)){

@@ -19,4 +19,8 @@ public class GameRunner {
     gamingConsole.right();
     gamingConsole.up();
   }
+
+  public String toString(){
+    return "GameRunner toString "+ gamingConsole;
+  }
 }

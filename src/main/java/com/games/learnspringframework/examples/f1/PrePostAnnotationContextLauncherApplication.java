@@ -1,14 +1,17 @@
 package com.games.learnspringframework.examples.f1;
 
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Lazy;
+
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
-// @Lazy
+
+@Lazy
 @Component
 class SomeClass{
   private SomeDependency someDependency;
@@ -35,9 +38,8 @@ class SomeClass{
 class SomeDependency{
 
   public void getSample() {
-    System.out.println("------From getSample method called form SomeClass---------");
+    System.out.println("------From getSample method called form SomeDependency---------");
   }
-
 }
 
 @ComponentScan
@@ -45,8 +47,11 @@ public class PrePostAnnotationContextLauncherApplication {
   public static void main(String[] args) {
     try(var context = new AnnotationConfigApplicationContext(PrePostAnnotationContextLauncherApplication.class);){
       System.out.println("----------------------");
-      // context.getBean(SomeClass.class);
+      System.out.println(context.getBean(SomeClass.class));
+      System.out.println(context.getBean(SomeClass.class));
+      System.out.println(context.getBean(SomeClass.class));
+      System.out.println(context.getBean(SomeClass.class));
+
     }
-    
   }
 }

@@ -1,16 +1,17 @@
 package com.games.learnspringframework.examples.f1;
 
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Lazy;
-
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
-
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Lazy
 @Component
 class SomeClass{

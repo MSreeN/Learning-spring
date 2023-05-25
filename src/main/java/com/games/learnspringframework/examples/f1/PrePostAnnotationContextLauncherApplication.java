@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
-@Lazy
+// @Lazy
 @Component
 class SomeClass{
   private SomeDependency someDependency;
@@ -45,7 +45,7 @@ public class PrePostAnnotationContextLauncherApplication {
   public static void main(String[] args) {
     try(var context = new AnnotationConfigApplicationContext(PrePostAnnotationContextLauncherApplication.class);){
       System.out.println("----------------------");
-      context.getBean(SomeClass.class);
+      // context.getBean(SomeClass.class);
     }
     
   }
